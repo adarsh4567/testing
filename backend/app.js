@@ -3,11 +3,13 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+app.use(express.json());
+
 const PORT = 5000 || process.env.PORT;
 
 
 app.get('/',(req,res)=>{
-    res.json({message:'Success'});
+    res.send('Hello world');
 })
 
 app.get('/sample',(req,res)=>{
